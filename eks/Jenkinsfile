@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     dir("terraform") {
-                        git branch: 'infra', url: 'https://github.com/ManojKRISHNAPPA/complete-cicd-project-microdegree.git'
+                        git branch: 'basa-infra', url: 'https://github.com/basavaraj9080/complete-cicd-project-microdegree.git'
                     }
                 }
             }
