@@ -13,7 +13,7 @@ spec:
         app: fullstack
     spec:
       containers:
-      - name: fullstack
+      - name: basavaraj8090/fullstack
         image: replace
         imagePullPolicy: Always
         ports:
