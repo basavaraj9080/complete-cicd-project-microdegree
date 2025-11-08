@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "manojkrishnappa/fullstack:${GIT_COMMIT}"
+        IMAGE_NAME = "basavaraj9080/fullstack:${GIT_COMMIT}"
         AWS_REGION = "us-east-1"
         CLUSTER_NAME = "microdegree-cluster"
         NAMESPACE = "microdegree"
@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/ManojKRISHNAPPA/complete-cicd-project-microdegree.git'
+                git branch: 'main', url: 'https://github.com/basavaraj9080/complete-cicd-project-microdegree.git'
             }
         }
 
@@ -46,7 +46,7 @@ pipeline {
             steps {
                 script {
                     sh 'printenv'
-                    sh "docker build -t manojkrishnappa/fullstack:${GIT_COMMIT} ."
+                    sh "docker build -t basavaraj9080/fullstack:${GIT_COMMIT} ."
                 }
             }
         }
@@ -54,7 +54,7 @@ pipeline {
         stage('Docker Image Scan') {
             steps {
                 script {
-                    sh "trivy image --format table -o trivy-image-report.html manojkrishnappa/fullstack:${GIT_COMMIT}"
+                    sh "trivy image --format table -o trivy-image-report.html basavaraj9080/fullstack:${GIT_COMMIT}"
                 }
             }
         }
@@ -72,7 +72,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    sh "docker push manojkrishnappa/fullstack:${GIT_COMMIT}"
+                    sh "docker push basavaraj9080/fullstack:${GIT_COMMIT}"
                 }
             }
         }
