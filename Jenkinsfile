@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "basavaraj9080/fullstack:${GIT_COMMIT}"
-        AWS_REGION = "us-east-1"
+        AWS_REGION = "ap-south-1"
         CLUSTER_NAME = "microdegree-cluster"
         NAMESPACE = "microdegree"
     }
@@ -129,9 +129,9 @@ pipeline {
                 emailext (
                     subject: "${jobName} - Build ${buildNumber} - ${pipelineStatus.toUpperCase()}",
                     body: body,
-                    to: 'manojdevopstest@gmail.com',
-                    from: 'manojdevopstest@gmail.com',
-                    replyTo: 'manojdevopstest@gmail.com',
+                    to: 'msbasavaraj33@gmail.com',
+                    from: 'msbasavaraj33@gmail.com',
+                    replyTo: 'msbasavaraj33@gmail.com',
                     mimeType: 'text/html',
                     attachmentsPattern: 'trivy-image-report.html'
                 )
